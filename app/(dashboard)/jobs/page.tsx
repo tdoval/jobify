@@ -1,12 +1,11 @@
-import CreateJobForm from "@/components/CreateJobForm"
-
+import CreateJobForm from "@/components/CreateJobForm";
 
 function JobsPage() {
     return (
         <>
-            <CreateJobForm />
+            <h1>Jobs Page</h1>
         </>
-    )
+    );
 }
 
-export default JobsPage
+export default JobsPage;
