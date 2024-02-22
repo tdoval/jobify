@@ -11,14 +11,26 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { JobStatus } from "@/utils/types";
+import { Search } from "lucide-react";
 
 function SearchForm() {
+    const searchParams = useSearchParams();
+    const search = searchParams.get("search") || "";
+    const jobStatus = searchParams.get("jobStatus") || "all";
+
+    const router = useRouter();
+    const pathname = usePathname();
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const search = formData.get("search") as string;
         const jobStatus = formData.get("jobStatus") as string;
-        console.log("Values: ", search, " + ", jobStatus);
+        let params = new URLSearchParams();
+        params.set("search", search);
+        params.set("jobStatus", jobStatus);
+
+        router.push(`${pathname}?${params.toString()}`);
     };
 
     return (
@@ -26,8 +38,13 @@ function SearchForm() {
             className="bg-muted mb-16 p-8 grid sm:grid-col-2 md:grid-cols-3 gap-4 rounded-lg"
             onSubmit={handleSubmit}
         >
-            <Input type="text" placeholder="Search Jobs" name="search" />
-            <Select name="jobStatus">
+            <Input
+                type="text"
+                placeholder="Search Jobs"
+                name="search"
+                defaultValue={search}
+            />
+            <Select name="jobStatus" defaultValue={jobStatus}>
                 <SelectTrigger>
                     <SelectValue />
                 </SelectTrigger>
