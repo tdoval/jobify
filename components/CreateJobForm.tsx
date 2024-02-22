@@ -62,7 +62,7 @@ function CreateJobForm() {
                 className="bg-muted p-8 rounded"
             >
                 <h2 className="capitalize font-semibold text-4xl mb-6">
-                    Add Job
+                    Add Job2
                 </h2>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start">
                     {/* Position */}
