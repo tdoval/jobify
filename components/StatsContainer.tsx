@@ -1,7 +1,7 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import { getStatsAction } from "@/utils/actions";
-import StatsCard from "./StatsCard";
+import StatsCard from "./StatsCards";
 
 function StatsContainer() {
     const { data } = useQuery({
