@@ -43,7 +43,6 @@ function EditJobForm({ jobId }: { jobId: string }) {
             queryClient.invalidateQueries({ queryKey: ["job", jobId] });
             queryClient.invalidateQueries({ queryKey: ["stats"] });
             router.push("/jobs");
-            // form.reset();
         },
     });
 
