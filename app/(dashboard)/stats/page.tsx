@@ -1,7 +1,8 @@
-const StatsPage = () => {
-    return (
-        <div className="text-4xl">StatsPage</div>
-    )
-}
+import { getStatsAction } from "@/utils/actions";
 
-export default StatsPage
+const StatsPage = () => {
+    getStatsAction();
+    return <h1 className="text-4xl">StatsPage</h1>;
+};
+
+export default StatsPage;
