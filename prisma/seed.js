@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { PrismaClient } = require('@prisma/client');
-const data = require('./mock_data_jobify.json');
+const data = require('./mock-data.json');
 const prisma = new PrismaClient();
 
 async function main() {
